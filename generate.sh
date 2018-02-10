@@ -6,4 +6,5 @@ if [ -z "${NAME}" ];then
 fi
   
 aws ec2 create-key-pair --key-name ${NAME} --query 'KeyMaterial' --output text > ~/.ssh/${NAME}.pem
-ls -hal ~/.ssh/*.pem
+chmod 400 ~/.ssh/${NAME}.pem
+ls -hal ~/.ssh/${NAME}.pem
